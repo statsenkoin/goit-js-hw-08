@@ -40,7 +40,8 @@ function onInputChange() {
 
 function onSubmit(e) {
   e.preventDefault();
-  console.log('savedFormState :>> ', feedbackFormState);
+  const submitData = JSON.parse(localStorage.getItem('feedback-form-state'));
+  console.log('submitData :>> ', submitData);
 
   // clean up form localStorage
   feedbackFormState.email = '';
