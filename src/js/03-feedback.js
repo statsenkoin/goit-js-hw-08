@@ -16,6 +16,10 @@ const form = document.querySelector('.feedback-form');
 form.addEventListener('input', _throttle(onInputChange, 500));
 form.addEventListener('submit', onSubmit);
 
+// you have to fill every fields
+form.elements.email.required = 'true';
+form.elements.message.required = 'true';
+
 onFormUpdate();
 // fill in form fields if any data in localStorage avialable from previous session
 function onFormUpdate() {
@@ -40,6 +44,7 @@ function onInputChange() {
 
 function onSubmit(e) {
   e.preventDefault();
+
   const submitData = JSON.parse(localStorage.getItem('feedback-form-state'));
   console.log('submitData :>> ', submitData);
 
