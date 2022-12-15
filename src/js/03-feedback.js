@@ -43,7 +43,7 @@ function onSubmit(e) {
   const submitData = JSON.parse(localStorage.getItem('feedback-form-state'));
   console.log('submitData :>> ', submitData);
 
-  // clean up form localStorage
+  // clean up localStorage form fields
   feedbackFormState.email = '';
   feedbackFormState.message = '';
   localStorage.setItem(
